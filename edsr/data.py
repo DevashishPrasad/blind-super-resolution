@@ -59,11 +59,8 @@ class Div2kDataset(Dataset):
         self.factor = degradation_params['scale']
 
         # before degradation transform
-        self.get_patch = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.RandomCrop(self.patch_size*self.factor)
-        ])
-
+        self.get_patch = transforms.RandomCrop(self.patch_size*self.factor)
+        
         # select normalization method
         self.normalize = None
         if mode == 'train':
@@ -84,14 +81,15 @@ class Div2kDataset(Dataset):
 
     def __getitem__(self, index):
         img = Image.open(self.hr_paths[index])
+        img = transfunc.to_tensor(img).to(device)
 
         # random crop image
-        y = self.get_patch(img).to(device)
+        y = self.get_patch(img)
         y = y.unsqueeze(0).unsqueeze(0)
         x, kernels = self.degradation(y)
         
-        y = y.squeeze(0).squeeze(0)
-        x = x.squeeze(0).squeeze(0)
+        y = y.squeeze(0).squeeze(0).to(device)
+        x = x.squeeze(0).squeeze(0).to(device)
 
         # normalize image
         y = self.normalize(y)

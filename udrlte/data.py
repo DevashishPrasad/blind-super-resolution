@@ -28,7 +28,7 @@ class RandomRotation(object):
 class Div2kDataset(Dataset):
     def __init__(self, hr_path, degradation_params, mode='train'):
         self.patch_size = 48
-        self.hr_paths = glob.glob(hr_path+'/*')[:50]
+        self.hr_paths = glob.glob(hr_path+'/*')
         self.mode = mode
         self.factor = 4
 

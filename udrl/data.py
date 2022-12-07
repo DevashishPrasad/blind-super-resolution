@@ -43,7 +43,6 @@ class Div2kDataset(Dataset):
 
         # before degradation transform
         self.all_transforms = transforms.Compose([
-                transforms.ToTensor(),
                 normalize,
                 transforms.RandomHorizontalFlip(p=0.5),
                 RandomRotation(p=0.33)
@@ -57,13 +56,14 @@ class Div2kDataset(Dataset):
     def __getitem__(self, index):
         img = Image.open(self.hr_paths[index])
         
+        img = transfunc.to_tensor(img).to(device)
         # random transform
         img = self.all_transforms(img)
 
         # crop patches
-        y1 = self.get_patch(img).to(device)
+        y1 = self.get_patch(img)
         y1 = y1.unsqueeze(0)
-        y2 = self.get_patch(img).to(device)
+        y2 = self.get_patch(img)
         y2 = y2.unsqueeze(0)
 
         p = torch.cat((y1, y2), dim=0)

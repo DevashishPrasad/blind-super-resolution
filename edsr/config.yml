@@ -20,6 +20,6 @@ degradation_params:
 
 training_params:
   learning_rate: 0.001
-  mini_batch_size: 64
+  mini_batch_size: 32
   epochs: 200
   patience: 10

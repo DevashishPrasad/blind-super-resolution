@@ -1,0 +1,25 @@
+data_paths:
+  train_dir: "../dataset/train/DIV2K_train_HR"  # path of training HR image files
+  valid_dir: "../dataset/valid/DIV2K_valid_HR"  # path of validation HR image files
+  test_dir: "../dataset/test/"                  # path of testing benchmark datasets
+
+degradation_params:
+  scale: 4  # [2, 3, 4]
+  mode: "bicubic" # [bicubic, s-fold]
+  kernel_size: 21
+  blur_type: "aniso_gaussian" # [iso_gaussian, aniso_gaussian]
+  sig: 2.6
+  sig_min: 0.2
+  sig_max: 4.0
+  lambda_1: 0.2
+  lambda_2: 4.0
+  theta: 0
+  lambda_min: 0.2
+  lambda_max: 4.0
+  noise: 0.1
+
+training_params:
+  learning_rate: 0.001
+  mini_batch_size: 8
+  epochs: 100
+  patience: 10

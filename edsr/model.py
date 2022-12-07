@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torchsummary import summary
 
-n_feat = 80
+n_feat = 128
 kernel_size = 3
 
 class _Res_Block(nn.Module):

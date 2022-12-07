@@ -26,8 +26,8 @@ patience = config['training_params']['patience']
 train_dataset = Div2kDataset(train_hr, degradation_params, 'train')
 val_dataset = Div2kDataset(valid_hr, degradation_params, 'val')
 
-trainloader = DataLoader(train_dataset, batch_size=mini_b_size, shuffle=True, num_workers=2)
-validloader = DataLoader(val_dataset, batch_size=mini_b_size, shuffle=True, num_workers=2)
+trainloader = DataLoader(train_dataset, batch_size=mini_b_size, shuffle=True)
+validloader = DataLoader(val_dataset, batch_size=mini_b_size, shuffle=True)
 
 dataloaders = {'train': trainloader, 'val': validloader}
 

@@ -26,13 +26,13 @@ We call our model UDRLTE (Unsupervised Degradation Representation Learning for B
 
 It is important to keep the number of parameters of all three models about the same for a fair comparison. The total number of parameters of UDRL and UDRLTE include both, the encoder and decoder
 
-<img src="figs/parameters.png" width="800">
+<img src="figs/noparameters.png" width="400">
 
 ## Evaluation
 
 We can clearly see that UDRLTE beats UDRL and EDSR. EDSR being a baseline clearly fails but it is because of the transformer-based backbone that UDRLTE was able to beat the original UDRL
 
-<img src="figs/benchmark.png" width="800">
+<img src="figs/benchmark.png" width="1000">
 
 ## More details
 

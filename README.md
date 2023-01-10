@@ -37,3 +37,5 @@ We can clearly see that UDRLTE beats UDRL and EDSR. EDSR being a baseline clearl
 ## More details
 
 Please refer Project_report.pdf present in this repo.
+
+Also please refere this repository https://github.com/DevashishPrasad/superresolution for previous work related to benchmarking

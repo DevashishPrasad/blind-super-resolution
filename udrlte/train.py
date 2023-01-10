@@ -12,7 +12,7 @@ import numpy as np
 
 ## Training 
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
-NAME = "udrl_x4"
+NAME = "udrlte_x4"
 
 t_invTrans = transforms.Compose([ 
                 transforms.Normalize(mean = [ 0., 0., 0. ],

@@ -34,6 +34,10 @@ We can clearly see that UDRLTE beats UDRL and EDSR. EDSR being a baseline clearl
 
 <img src="figs/benchmark.png" width="1000">
 
+## Checkpoints
+
+You can find model checkpoint .pth files in the respective folders. Here is the link for sample colab notebook for inference = https://colab.research.google.com/drive/1nqaVKJ0apJ2WSVzHcpZwplyJyEwTAoGI?usp=sharing
+
 ## More details
 
 Please refer Project_report.pdf present in this repo.
